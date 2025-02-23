@@ -1,9 +1,13 @@
-import Navbar from './components/Navbar/Navbar'
+import DashboardStats from "./components/DashboardStats/DashboardStats";
+import Navbar from "./components/Navbar/Navbar";
 
 const App = () => {
   return (
-    <Navbar/>
-  )
-}
+    <>
+      <Navbar />
+      <DashboardStats />
+    </>
+  );
+};
 
-export default App
+export default App;

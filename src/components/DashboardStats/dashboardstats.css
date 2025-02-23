@@ -1,0 +1,89 @@
+.dashboardstats__main {
+    max-width: 67rem; /*1072px*/
+    margin: 3rem auto;
+    padding: 0 1rem;
+    height: auto;
+    min-height: 40rem;
+}
+
+.dashboardstats__main--top {
+    display: grid;
+    grid-template-columns: minmax(auto, 648px) minmax(auto, 424px);
+    gap: 1.5rem;
+    height: auto;
+    min-height: 12.5rem;
+}
+
+.dashboardstats__main--top--left {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(110px, 200px));
+    gap: 1.5rem;
+    height: 100%;
+    max-width: 648px;
+}
+
+.dashboardstats__main--top--right {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(110px, 200px));
+    gap: 1.5rem;
+    height: 100%;
+    max-width: 424px;
+}
+
+/* Ensure minimum card height across all screen sizes */
+.dashboardstats__main--top--left > div,
+.dashboardstats__main--top--right > div {
+    min-height: 12.5rem; /* Same as original container height */
+    height: 100%;
+}
+
+/* Tablet devices */
+@media screen and (max-width: 1024px) {
+    .dashboardstats__main--top {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboardstats__main--top--left,
+    .dashboardstats__main--top--right {
+        max-width: 100%;
+    }
+}
+
+/* Small tablet / Large mobile */
+@media screen and (max-width: 768px) {
+    .dashboardstats__main--top--left {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .dashboardstats__main--top--right {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .dashboardstats__main--top--left > div,
+    .dashboardstats__main--top--right > div {
+        min-height: 10rem; /* Slightly smaller but still substantial on tablets */
+    }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+    .dashboardstats__main {
+        margin: 2rem auto;
+        padding: 0 0.75rem;
+    }
+    
+    .dashboardstats__main--top {
+        gap: 1rem;
+    }
+    
+    .dashboardstats__main--top--left,
+    .dashboardstats__main--top--right {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .dashboardstats__main--top--left > div,
+    .dashboardstats__main--top--right > div {
+        min-height: 9rem; /* Maintain good height on mobile */
+    }
+}
